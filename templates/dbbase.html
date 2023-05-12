@@ -1,0 +1,23 @@
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Base</title>
+ </head>
+<body>
+<center><h1> My APP TODO List</h1></center>
+<form action="/insert" method="post" >
+  <input type="text" name="c_name">Enter a Value</input>
+  <button type="submit">Add Task</button>
+</form><br>
+Recent Task Added : {{c_name}}<br>
+<center><h1>Added Task </h1></center>
+{% for i in l1 %}
+{{i.cid}} | {{i.c_name}}<a href="/delete/{{i.cid}}">Delete</a><br>
+{% endfor %}
+<center><h1>Deleted Task </h1></center>
+{% if deleted_cname %}
+    <p>Recent Task Deleted : {{ deleted_cname }}</p>
+{% endif %}
+</body>
+</html>
