@@ -16,7 +16,7 @@ jobs:
       run: python test.py
     - name: Docker Testing
       run: docker run hello-world
-    -name: push to docker hub
+    - name: push to docker hub
       uses: docker/build-push-action@v4.0.0
       with:
         username: ${{secrets.}}
