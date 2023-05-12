@@ -14,4 +14,15 @@ jobs:
       run: pip install -r requirements.txt
     - name: Run script
       run: python test.py
+    - name: Docker Testing
+      run: docker run hello-world
+    -name: push to docker hub
+      uses: docker/build-push-action@v4.0.0
+      with:
+        username: ${{secrets.}}
+        password: ${{secrets.}}
+        repository: docker push praveenece443/devops-project-001
+        tag_with_ref: true
+      
+      
 
